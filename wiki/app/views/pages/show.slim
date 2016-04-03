@@ -4,6 +4,40 @@ html
     meta charset="UTF-8"
     title
       = @file
+    link rel="stylesheet" href="/style.css" type="text/css" media="screen"
+    link rel="stylesheet" href="https://cdn.qiita.com/assets/application-908179b847285b960787d7dd51abca71e41a3f201475ed80de80fa07b8933304.css" type="text/css" media="screen"
 
+    script src="/js/jquery1.7.2.min.js"
+    script src="/js/script.js"
   body
-    == @result[:output]
+    header id="header"
+      div.logo
+        a wiki
+
+    nav id="mainNav"
+    	div class="inner"
+      	a class="menu" id="menu"
+          span
+            MENU
+    		div class="panel"
+          ul
+            li
+              list
+
+    div id="wrapper"
+      section class="gridWrapper"
+        article
+          div.box
+            == @result[:output]
+
+    footer id="footer"
+    	div class="inner"
+    		div id="info" class="grid"
+    			div class="logo"
+            hoge
+    			div class="info"
+            hoge2
+        ul
+          li
+            list
+  	<address> Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>

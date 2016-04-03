@@ -20,7 +20,7 @@ Wiki::App.controllers :pages do
   # end
 
   get :show do
-    @file = params[:q]
+    @file = params[:p] || 'index.md'
 
     repo = Rugged::Repository.new('/Users/bash/Documents/wiki')
     oid = Rugged::Blob.from_workdir repo, @file
@@ -29,6 +29,7 @@ Wiki::App.controllers :pages do
 
     processor = Qiita::Markdown::Processor.new
     @result = processor.call(markdown)
+
     render :show
   end
 
